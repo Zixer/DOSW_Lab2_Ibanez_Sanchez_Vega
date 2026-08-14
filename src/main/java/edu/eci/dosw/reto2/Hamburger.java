@@ -1,4 +1,4 @@
-package reto2;
+package edu.eci.dosw.reto2;
 
 import java.util.List;
 
