@@ -1,3 +1,5 @@
+package edu.eci.dosw.reto2;
+
 public interface Builder {
 
     Builder addBread();
