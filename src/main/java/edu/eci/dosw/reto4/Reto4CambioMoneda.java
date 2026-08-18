@@ -28,96 +28,53 @@ public final class Reto4CambioMoneda {
 
         Scanner scanner = new Scanner(System.in);
 
-        ExchangeRateProvider rateProvider =
-                new FixedExchangeRateProvider();
+        ExchangeRateProvider rateProvider =new FixedExchangeRateProvider();
 
-        ConversionStrategy strategy =
-                new CurrencyConversionStrategy(
-                        rateProvider
-                );
+        ConversionStrategy strategy =new CurrencyConversionStrategy(rateProvider);
 
-        CurrencyConverterService converter =
-                new CurrencyConverterService(
-                        strategy
-                );
+        CurrencyConverterService converter =new CurrencyConverterService(strategy);
 
-        List<ConversionResult> transactions =
-                new ArrayList<>();
+        List<ConversionResult> transactions =new ArrayList<>();
 
-        System.out.println(
-                "\n================================"
-        );
-        System.out.println(
-                "CHALLENGE 4 - CURRENCY EXCHANGE"
-        );
-        System.out.println(
-                "================================"
-        );
+        System.out.println("\n================================");
+        System.out.println("CHALLENGE 4 - CURRENCY EXCHANGE");
+        System.out.println("================================");
 
         boolean continueTransactions = true;
 
         while (continueTransactions) {
 
-            System.out.print(
-                    "\nEnter amount: "
-            );
+            System.out.print( "\nEnter amount: ");
 
-            double amount =
-                    scanner.nextDouble();
+            double amount = scanner.nextDouble();
 
-            Currency source =
-                    selectCurrency(
-                            scanner,
-                            "\nSelect source currency:"
-                    );
+            Currency source =selectCurrency(scanner,"\nSelect source currency:");
 
-            System.out.print(
-                    "\nHow many destination currencies? "
-            );
+            System.out.print("\nHow many destination currencies? ");
 
-            int numberOfDestinations =
-                    scanner.nextInt();
+            int numberOfDestinations = scanner.nextInt();
 
-            for (int i = 0;
-                 i < numberOfDestinations;
-                 i++) {
+            for (int i = 0;i < numberOfDestinations;i++) {
 
-                Currency destination =
-                        selectCurrency(
-                                scanner,
-                                "\nSelect destination currency "
-                                        + (i + 1)
-                                        + ":"
-                        );
+                Currency destination = selectCurrency(scanner,"\nSelect destination currency "+ (i + 1)+ ":");
 
-                ConversionResult result =
-                        converter.convert(
-                                amount,
-                                source,
-                                destination
-                        );
+                ConversionResult result =converter.convert(amount,source,destination);
 
                 transactions.add(result);
 
-                System.out.println(
-                        "\nConversion completed:"
-                );
+                System.out.println("\nConversion completed:");
 
                 result.showInformation();
             }
 
-            System.out.println(
-                    "\nDo you want to enter another transaction?"
-            );
+            System.out.println("\nDo you want to enter another transaction?");
 
             System.out.println("1. Yes");
             System.out.println("2. No");
 
-            int option =
-                    scanner.nextInt();
+            int option =scanner.nextInt();
 
-            continueTransactions =
-                    option == 1;
+            continueTransactions = option == 1;
         }
 
         showSummary(transactions);
@@ -133,9 +90,7 @@ public final class Reto4CambioMoneda {
      * @throws IllegalArgumentException if the option
      *         is invalid
      */
-    private static Currency selectCurrency(
-            Scanner scanner,
-            String message) {
+    private static Currency selectCurrency(Scanner scanner,String message) {
 
         System.out.println(message);
 
@@ -144,8 +99,7 @@ public final class Reto4CambioMoneda {
         System.out.println("3. JPY");
         System.out.println("4. COP");
 
-        int option =
-                scanner.nextInt();
+        int option = scanner.nextInt();
 
         return switch (option) {
 
@@ -155,9 +109,7 @@ public final class Reto4CambioMoneda {
             case 4 -> Currency.COP;
 
             default ->
-                    throw new IllegalArgumentException(
-                            "Invalid currency."
-                    );
+                    throw new IllegalArgumentException("Invalid currency.");
         };
     }
 
@@ -168,54 +120,27 @@ public final class Reto4CambioMoneda {
      *
      * @param transactions list of completed conversions
      */
-    private static void showSummary(
-            List<ConversionResult> transactions) {
+    private static void showSummary(List<ConversionResult> transactions) {
 
-        System.out.println(
-                "\n================================"
-        );
-        System.out.println(
-                "       EXCHANGE SUMMARY"
-        );
-        System.out.println(
-                "================================"
-        );
+        System.out.println("\n================================");
+        System.out.println("       EXCHANGE SUMMARY");
+        System.out.println("================================");
 
-        transactions.forEach(
-                ConversionResult::showInformation
-        );
+        transactions.forEach(ConversionResult::showInformation);
 
-        Map<Currency, Double> totals =
-                transactions.stream()
-                        .collect(
-                                Collectors.groupingBy(
-                                        ConversionResult::
-                                                getDestinationCurrency,
+        Map<Currency, Double> totals = transactions.stream()
+                .collect(Collectors.groupingBy(ConversionResult::getDestinationCurrency,Collectors.summingDouble(ConversionResult::getConvertedAmount)));
 
-                                        Collectors.summingDouble(
-                                                ConversionResult::
-                                                        getConvertedAmount
-                                        )
-                                )
-                        );
+        System.out.println("\n--------------------------------");
+        System.out.println("TOTALS BY DESTINATION CURRENCY");
+        System.out.println("--------------------------------");
 
-        System.out.println(
-                "\n--------------------------------"
-        );
-        System.out.println(
-                "TOTALS BY DESTINATION CURRENCY"
-        );
-        System.out.println(
-                "--------------------------------"
-        );
-
-        totals.forEach(
-                (currency, total) ->
-                        System.out.printf(
+        totals.forEach((currency, total) ->
+                                System.out.printf(
                                 "%s: %.2f%n",
                                 currency,
                                 total
-                        )
+                                )
         );
     }
 }
