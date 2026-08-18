@@ -1,4 +1,4 @@
-package reto6;
+package edu.eci.dosw.reto6;
 
 /**
  * Technician specialized in basic tickets with a maximum priority of MEDIUM

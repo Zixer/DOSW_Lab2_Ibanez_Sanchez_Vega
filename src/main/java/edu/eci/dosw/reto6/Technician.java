@@ -1,4 +1,4 @@
-package reto6;
+package edu.eci.dosw.reto6;
 
 /**
  * Base handler of the Chain of Responsibility
@@ -19,10 +19,7 @@ public abstract class Technician {
      * @param specialty maximum difficulty handled
      * @param maximumPriority maximum priority handled
      */
-    protected Technician(
-            String name,
-            DifficultyLevel specialty,
-            Priority maximumPriority) {
+    protected Technician(String name,DifficultyLevel specialty,Priority maximumPriority) {
 
         this.name = name;
         this.specialty = specialty;

@@ -1,7 +1,6 @@
 package edu.eci.dosw.reto6;
 
-/* 
-Represents the difficulty levels available
+/* Represents the difficulty levels available
 for technical support tickets.
 */
 public enum DifficultyLevel {

@@ -1,4 +1,5 @@
 package edu.eci.dosw.reto6;
+
 /* Technician specialized in advanced tickets
 with a maximum priority of MEDIUM.*
 Advanced tickets with HIGH priority therefore
