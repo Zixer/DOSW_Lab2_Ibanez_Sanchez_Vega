@@ -1,10 +1,9 @@
-package reto5;
+package edu.eci.dosw.reto5;
 
 /**
  * Adds whipped cream to a coffee.
  */
-public class WhippedCreamDecorator
-        extends CoffeeDecorator {
+public class WhippedCreamDecorator extends CoffeeDecorator {
 
     private static final double PRICE = 2000.0;
 
@@ -22,8 +21,7 @@ public class WhippedCreamDecorator
      */
     @Override
     public String getDescription() {
-        return coffee.getDescription()
-                + ", Whipped Cream";
+        return coffee.getDescription()+ ", Whipped Cream";
     }
 
     /**
