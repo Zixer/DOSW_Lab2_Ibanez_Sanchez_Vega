@@ -1,4 +1,4 @@
-package edu.eci.dosw.reto5;
+package edu.eci.dosw.reto5; 
 
 /**
  * Adds whipped cream to a coffee.

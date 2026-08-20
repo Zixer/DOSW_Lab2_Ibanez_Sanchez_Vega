@@ -1,4 +1,4 @@
-package edu.eci.dosw.reto5;
+package edu.eci.dosw.reto5; 
 
 /* Adds mint to a coffee.*/
 public class MintDecorator extends CoffeeDecorator {

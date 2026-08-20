@@ -1,4 +1,4 @@
-package edu.eci.dosw.reto5;
+package edu.eci.dosw.reto5; 
 
 /* 
 Defines the common behavior for a coffee.
