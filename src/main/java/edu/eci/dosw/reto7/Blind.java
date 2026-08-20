@@ -1,4 +1,4 @@
-package reto7;
+package edu.eci.dosw.reto7;
 
 /**
  * Represents a window blind
