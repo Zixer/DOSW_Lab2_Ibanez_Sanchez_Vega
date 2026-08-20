@@ -1,6 +1,7 @@
 package edu.eci.dosw.reto4;
 
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -14,7 +15,7 @@ public final class Reto4CurrencyExchangeScam {
     /**
      * Prevents the creation of objects of this class.
      */
-    private Reto4CambioMoneda() {
+    private Reto4CurrencyExchangeScam() {
     }
 
     /**
