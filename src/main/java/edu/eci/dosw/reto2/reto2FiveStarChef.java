@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public final class reto2FiveStarChef {
 
-    private Reto2ChefHamburguesa() {
+    private reto2FiveStarChef() {
     }
 
     public static void run() {
