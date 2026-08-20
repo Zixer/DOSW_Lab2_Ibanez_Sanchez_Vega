@@ -1,0 +1,20 @@
+package edu.eci.dosw.reto1;
+
+public final class Product {
+
+    private final String name;
+    private final double unitPrice;
+
+    public Product(String name, double unitPrice) {
+        this.name = name;
+        this.unitPrice = unitPrice;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getUnitPrice() {
+        return unitPrice;
+    }
+}
