@@ -8,9 +8,9 @@ Challenge 7 - Magic Remote Control.
 Demonstrates the Command pattern by representing every device action as an independent command.
 */
 
-public final class Reto7ControlRemoto {
+public final class reto7MagicRemoteControl {
 
-    private Reto7ControlRemoto() {
+    private reto7MagicRemoteControl() {
     }
 
     /*
