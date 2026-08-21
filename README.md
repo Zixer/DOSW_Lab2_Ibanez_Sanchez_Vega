@@ -16,7 +16,7 @@
 
 | Principle | Application in the Solution |
 
-| :--- | :--- |
+|---|---:|
 
 | Single Responsibility | Each class has a specific responsibility. Products store their information, the cart manages the purchase, and discount classes calculate the corresponding discount |
 
