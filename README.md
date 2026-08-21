@@ -15,17 +15,11 @@
 
 
 | Principle | Application in the Solution |
-
-|---|---:|
-
+|---|---|
 | Single Responsibility | Each class has a specific responsibility. Products store their information, the cart manages the purchase, and discount classes calculate the corresponding discount |
-
 | Open/Closed | New types of discounts can be added without modifying the existing discount logic |
-
 | Liskov Substitution | Any discount implementation can be used in place of another as long as it follows the same discount contract |
-
 | Interface Segregation | The interfaces contain only the methods that their implementations actually need |
-
 | Dependency Inversion | The purchase logic depends on the discount abstraction instead of a specific discount class |
 
 
