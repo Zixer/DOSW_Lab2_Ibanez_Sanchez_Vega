@@ -1,4 +1,4 @@
-import edu.eci.dosw.reto3;
+import edu.eci.dosw.reto3.reto3KingdomofVehicles;
 
 import static org.junit.Assert.*;
 import org.junit.After;

@@ -1,4 +1,4 @@
-import edu.eci.dosw.reto2;
+import edu.eci.dosw.reto2.reto2FiveStarChef;
 
 import static org.junit.Assert.*;
 import org.junit.After;
