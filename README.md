@@ -198,30 +198,29 @@ The history is kept even when an action is undone. This makes it possible to kno
 
 | Class or Interface | Responsibility |
 |---|---|
+| AnimalBuilder | Implements the Builder pattern to create and configure animal instances step by step |
 | Animal | Contains the common information and behavior of zoo animals |
+| HealthyStatus | Enumeration representing the health states of an animal (HEALTHY, SICK, QUARANTINE) |
 | Mammal | Represents mammals in the zoo |
 | Reptile | Represents reptiles in the zoo |
 | Bird | Represents birds in the zoo |
-| Habitat | Represents the habitat assigned to animals |
-| Caretaker | Represents the person responsible for feeding, bathing and caring for animals and habitats |
-| Visitor | Represents visitors and their interactions with animals and caretakers |
-| AnimalAttribute | Represents additional attributes that can be assigned dynamically to animals |
-| Photo | Represents photographs uploaded by visitors |
+| Person | Base class representing people (caretakers and visitors) in the system |
+| Caretaker | Represents the person responsible for feeding, bathing and cleaning habitats for animals |
+| Visitor | Represents visitors, their interactions, and tracking of favorite animals |
 
 ## Relationships
 
 | Source | Relationship | Target | Multiplicity | Explanation |
 |---|---|---|---|---|
-| Mammal | Inheritance | Animal | 1 | Mammal is a type of Animal |
-| Reptile | Inheritance | Animal | 1 | Reptile is a type of Animal |
-| Bird | Inheritance | Animal | 1 | Bird is a type of Animal |
-| Caretaker | Association | Animal | 0..* | A caretaker can be associated with several animals |
-| Animal | Association | Habitat | * to 1 | Several animals can belong to the same habitat |
-| Visitor | Association | Animal | 0..* | Visitors can interact with and select several animals as favorites |
-| Visitor | Association | Caretaker | 0..* | Visitors can interact with and give tips to caretakers |
-| Visitor | Association | Photo | 0..* | A visitor can upload several photographs |
-| Photo | Association | Animal | 1 | A photograph is associated with an observed animal |
-| Animal | Association | AnimalAttribute | 0..* | An animal can have several dynamic attributes |
+| Mammal | Inheritance | Animal | 1 | Mammal inherits from Animal |
+| Reptile | Inheritance | Animal | 1 | Reptile inherits from Animal |
+| Bird | Inheritance | Animal | 1 | Bird inherits from Animal |
+| Caretaker | Inheritance | Person | 1 | Caretaker inherits attributes and methods from Person |
+| Visitor | Inheritance | Person | 1 | Visitor inherits attributes and methods from Person |
+| AnimalBuilder | Dependency | Animal | - | AnimalBuilder creates and returns Animal instances |
+| Animal | Composition | HealthyStatus | 1 | An animal is strictly composed of one health status |
+| Caretaker | Association | Animal | 1..* | A caretaker is assigned to manage and care for one or more animals |
+| Visitor | Association | Animal | * | Visitors can select and track several animals as favorites |
 
 ## SOLID Application
 
@@ -238,10 +237,10 @@ The history is kept even when an action is undone. This makes it possible to kno
 
 | Item | Team Explanation |
 |---|---|
-| Design Pattern Category | Not Used |
-| Pattern Used | Not Used |
-| Justification | A specific design pattern was not necessary for the main UML design. The solution focuses on inheritance, polymorphism, associations and SOLID principles |
-| How It Was Applied | Not applicable. |
+| Design Pattern Category | Creational |
+| Pattern Used | Builder |
+| Justification | Animal creation is handled step by step using a builder to handle multiple attributes and health statuses cleanly |
+| How It Was Applied | The AnimalBuilder class constructs the animal instance progressively before returning the final object |
 
 ## UML Class Diagram
 
