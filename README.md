@@ -175,7 +175,7 @@ Java Streams are used to obtain statistics such as tickets by level, resolved ti
 ![Challenge 7 Execution](evidences/lab2reto7.png)
 
 
-\## Design Pattern Documentation
+## Design Pattern Documentation
 
 
 | Item | Team Explanation |
