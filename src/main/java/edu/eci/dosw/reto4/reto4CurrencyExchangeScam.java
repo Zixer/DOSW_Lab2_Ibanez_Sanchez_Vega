@@ -9,12 +9,12 @@ import java.util.stream.Collectors;
 /**
  * Executes Challenge 4 - Currency Exchange.
  */
-public final class Reto4CurrencyExchangeScam {
+public final class reto4CurrencyExchangeScam {
 
     /**
      * Prevents the creation of objects of this class.
      */
-    private Reto4CurrencyExchangeScam() {
+    private reto4CurrencyExchangeScam() {
     }
 
     /**
