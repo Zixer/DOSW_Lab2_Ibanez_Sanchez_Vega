@@ -1,4 +1,4 @@
-import edu.eci.dosw.reto1;
+import edu.eci.dosw.reto1.reto1DonPepeStore;
 
 import static org.junit.Assert.*;
 import org.junit.After;
