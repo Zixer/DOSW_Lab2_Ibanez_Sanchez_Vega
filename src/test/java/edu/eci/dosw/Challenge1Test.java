@@ -10,7 +10,7 @@ import java.io.PrintStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 
-public class Reto1DonPepeStoreTest {
+public class Challenge1Test {
 
     private final PrintStream originalOut = System.out;
     private ByteArrayOutputStream outContent;
