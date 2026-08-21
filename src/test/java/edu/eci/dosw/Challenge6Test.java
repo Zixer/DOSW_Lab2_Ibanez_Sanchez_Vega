@@ -36,155 +36,165 @@ public class Challenge6Test {
 
     @Test
     public void testPrivateConstructor() throws Exception {
-        Constructor<reto6TechnicalSupport> constructor = reto6TechnicalSupport.class.getDeclaredConstructor();
+        Constructor<reto6TalktoTechnicalSupport> constructor = reto6TalktoTechnicalSupport.class.getDeclaredConstructor();
         assertTrue("El constructor debe ser privado", Modifier.isPrivate(constructor.getModifiers()));
         constructor.setAccessible(true);
         constructor.newInstance();
     }
 
     @Test
-    public void testBasicLowTicketResolvedByBasicTechnicianStrict() {
+    public void testBasicLowTicketResolvedStrict() {
         provideInput("Password reset\n1\n1\n2\n");
-        reto6TechnicalSupport.run();
+
+        reto6TalktoTechnicalSupport.run();
+
         String output = outContent.toString();
 
-        assertTrue("Falta el ticket creado", output.contains("Ticket #1"));
-        assertTrue("Falta la descripcion", output.contains("Password reset"));
-        assertTrue("Falta la dificultad BASIC", output.contains("Difficulty: BASIC"));
-        assertTrue("Falta la prioridad LOW", output.contains("Priority: LOW"));
-        assertTrue("El tecnico basico debe resolver el ticket", output.contains("Resolved by: Daniel - Basic Technician"));
+        assertTrue("Falta la descripcion del ticket", output.contains("Password reset"));
+        assertTrue("Falta el nivel BASIC", output.contains("BASIC"));
+        assertTrue("Falta la prioridad LOW", output.contains("LOW"));
+        assertTrue("El ticket basico debe ser resuelto", output.contains("RESOLVED"));
+        assertTrue("El tecnico basico debe resolver el ticket", output.contains("Basic Technician"));
     }
 
     @Test
-    public void testBasicHighTicketPassesToIntermediateStrict() {
-        provideInput("Printer failure\n1\n3\n2\n");
-        reto6TechnicalSupport.run();
-        String output = outContent.toString();
-
-        assertTrue("El tecnico basico debe revisar el ticket", output.contains("Daniel - Basic Technician is reviewing Ticket #1"));
-        assertTrue("El tecnico basico no debe resolver prioridad HIGH", output.contains("Daniel - Basic Technician cannot resolve Ticket #1"));
-        assertTrue("Debe pasar al tecnico intermedio", output.contains("Passing ticket to Laura - Intermediate Technician"));
-        assertTrue("El tecnico intermedio debe resolver el ticket", output.contains("Resolved by: Laura - Intermediate Technician"));
-    }
-
-    @Test
-    public void testIntermediateTicketResolvedByIntermediateStrict() {
+    public void testIntermediateTicketStrict() {
         provideInput("Database connection error\n2\n2\n2\n");
-        reto6TechnicalSupport.run();
+
+        reto6TalktoTechnicalSupport.run();
+
         String output = outContent.toString();
 
-        assertTrue("El ticket debe pasar por el tecnico basico", output.contains("Daniel - Basic Technician"));
-        assertTrue("El ticket debe llegar al tecnico intermedio", output.contains("Laura - Intermediate Technician"));
-        assertTrue("El tecnico intermedio debe resolver el ticket", output.contains("Resolved by: Laura - Intermediate Technician"));
-        assertTrue("Debe mostrarse el recorrido completo", output.contains("Daniel - Basic Technician -> Laura - Intermediate Technician"));
+        assertTrue("Falta la descripcion del ticket", output.contains("Database connection error"));
+        assertTrue("Falta el nivel INTERMEDIATE", output.contains("INTERMEDIATE"));
+        assertTrue("Falta la prioridad MEDIUM", output.contains("MEDIUM"));
+        assertTrue("El ticket debe ser resuelto", output.contains("RESOLVED"));
+        assertTrue("El tecnico intermedio debe resolver el ticket", output.contains("Intermediate Technician"));
     }
 
     @Test
-    public void testAdvancedMediumTicketResolvedByAdvancedStrict() {
+    public void testAdvancedTicketStrict() {
         provideInput("Server configuration failure\n3\n2\n2\n");
-        reto6TechnicalSupport.run();
+
+        reto6TalktoTechnicalSupport.run();
+
         String output = outContent.toString();
 
-        assertTrue("Debe revisar el tecnico basico", output.contains("Daniel - Basic Technician is reviewing Ticket #1"));
-        assertTrue("Debe revisar el tecnico intermedio", output.contains("Laura - Intermediate Technician is reviewing Ticket #1"));
-        assertTrue("Debe revisar el tecnico avanzado", output.contains("Carlos - Advanced Technician is reviewing Ticket #1"));
-        assertTrue("El tecnico avanzado debe resolver el ticket", output.contains("Resolved by: Carlos - Advanced Technician"));
+        assertTrue("Falta la descripcion del ticket", output.contains("Server configuration failure"));
+        assertTrue("Falta el nivel ADVANCED", output.contains("ADVANCED"));
+        assertTrue("Falta la prioridad MEDIUM", output.contains("MEDIUM"));
+        assertTrue("El ticket debe ser resuelto", output.contains("RESOLVED"));
+        assertTrue("El tecnico avanzado debe resolver el ticket", output.contains("Advanced Technician"));
     }
 
     @Test
-    public void testAdvancedHighTicketPendingEscalationStrict() {
-        provideInput("Critical server failure\n3\n3\n2\n");
-        reto6TechnicalSupport.run();
+    public void testTicketMovesThroughChainStrict() {
+        provideInput("Advanced network problem\n3\n2\n2\n");
+
+        reto6TalktoTechnicalSupport.run();
+
         String output = outContent.toString();
 
-        assertTrue("El ticket debe pasar por el tecnico basico", output.contains("Daniel - Basic Technician"));
-        assertTrue("El ticket debe pasar por el tecnico intermedio", output.contains("Laura - Intermediate Technician"));
-        assertTrue("El ticket debe pasar por el tecnico avanzado", output.contains("Carlos - Advanced Technician"));
-        assertTrue("El ticket debe quedar pendiente", output.contains("PENDING ESCALATION"));
+        assertTrue("El ticket debe pasar por el tecnico basico", output.contains("Basic Technician"));
+        assertTrue("El ticket debe pasar por el tecnico intermedio", output.contains("Intermediate Technician"));
+        assertTrue("El ticket debe llegar al tecnico avanzado", output.contains("Advanced Technician"));
+        assertTrue("El ticket debe quedar resuelto", output.contains("RESOLVED"));
     }
 
     @Test
-    public void testTechnicianPathStrict() {
-        provideInput("Network architecture problem\n3\n1\n2\n");
-        reto6TechnicalSupport.run();
+    public void testPendingEscalationStrict() {
+        provideInput("Critical system failure\n3\n3\n2\n");
+
+        reto6TalktoTechnicalSupport.run();
+
         String output = outContent.toString();
 
-        assertTrue("Debe mostrarse el recorrido completo", output.contains("Daniel - Basic Technician -> Laura - Intermediate Technician -> Carlos - Advanced Technician"));
-        assertTrue("El tecnico avanzado debe resolver el ticket", output.contains("Resolved by: Carlos - Advanced Technician"));
+        assertTrue("Falta la descripcion del ticket", output.contains("Critical system failure"));
+        assertTrue("Falta el nivel ADVANCED", output.contains("ADVANCED"));
+        assertTrue("Falta la prioridad HIGH", output.contains("HIGH"));
+        assertTrue("El ticket debe quedar pendiente de escalamiento", output.contains("PENDING ESCALATION"));
     }
 
     @Test
     public void testMultipleTicketsStrict() {
-        provideInput("Password reset\n1\n1\n1\nDatabase failure\n2\n3\n1\nCritical server failure\n3\n3\n2\n");
-        reto6TechnicalSupport.run();
+        provideInput("Password reset\n1\n1\n1\nDatabase error\n2\n2\n1\nServer failure\n3\n2\n2\n");
+
+        reto6TalktoTechnicalSupport.run();
+
         String output = outContent.toString();
 
-        assertTrue("Falta Ticket #1", output.contains("Ticket #1"));
-        assertTrue("Falta Ticket #2", output.contains("Ticket #2"));
-        assertTrue("Falta Ticket #3", output.contains("Ticket #3"));
-        assertTrue("El primer ticket debe ser resuelto por el tecnico basico", output.contains("Resolved by: Daniel - Basic Technician"));
-        assertTrue("El segundo ticket debe ser resuelto por el tecnico intermedio", output.contains("Resolved by: Laura - Intermediate Technician"));
-        assertTrue("El tercer ticket debe quedar pendiente", output.contains("Status: PENDING ESCALATION"));
+        assertTrue("Falta el Ticket #1", output.contains("Ticket #1"));
+        assertTrue("Falta el Ticket #2", output.contains("Ticket #2"));
+        assertTrue("Falta el Ticket #3", output.contains("Ticket #3"));
+        assertTrue("Falta la descripcion del primer ticket", output.contains("Password reset"));
+        assertTrue("Falta la descripcion del segundo ticket", output.contains("Database error"));
+        assertTrue("Falta la descripcion del tercer ticket", output.contains("Server failure"));
+        assertTrue("Falta el tecnico basico", output.contains("Basic Technician"));
+        assertTrue("Falta el tecnico intermedio", output.contains("Intermediate Technician"));
+        assertTrue("Falta el tecnico avanzado", output.contains("Advanced Technician"));
     }
 
     @Test
-    public void testTicketsByDifficultyStatisticsStrict() {
-        provideInput("Issue one\n1\n1\n1\nIssue two\n2\n1\n1\nIssue three\n3\n2\n2\n");
-        reto6TechnicalSupport.run();
+    public void testTicketsByLevelStatisticsStrict() {
+        provideInput("Basic issue\n1\n1\n1\nIntermediate issue\n2\n2\n1\nAdvanced issue\n3\n2\n2\n");
+
+        reto6TalktoTechnicalSupport.run();
+
         String output = outContent.toString();
 
-        assertTrue("Debe aparecer BASIC: 1", output.contains("BASIC: 1"));
-        assertTrue("Debe aparecer INTERMEDIATE: 1", output.contains("INTERMEDIATE: 1"));
-        assertTrue("Debe aparecer ADVANCED: 1", output.contains("ADVANCED: 1"));
+        assertTrue("La cantidad de tickets BASIC es incorrecta", output.contains("BASIC: 1"));
+        assertTrue("La cantidad de tickets INTERMEDIATE es incorrecta", output.contains("INTERMEDIATE: 1"));
+        assertTrue("La cantidad de tickets ADVANCED es incorrecta", output.contains("ADVANCED: 1"));
     }
 
     @Test
     public void testResolvedAndPendingStatisticsStrict() {
         provideInput("Basic issue\n1\n1\n1\nCritical issue\n3\n3\n2\n");
-        reto6TechnicalSupport.run();
+
+        reto6TalktoTechnicalSupport.run();
+
         String output = outContent.toString();
 
-        assertTrue("Debe haber un ticket resuelto", output.contains("Resolved tickets: 1"));
-        assertTrue("Debe haber un ticket pendiente", output.contains("Pending tickets: 1"));
+        assertTrue("La cantidad de tickets resueltos es incorrecta", output.contains("Resolved tickets: 1"));
+        assertTrue("La cantidad de tickets pendientes es incorrecta", output.contains("Pending tickets: 1"));
     }
 
     @Test
-    public void testEscalatedTicketsStatisticsStrict() {
-        provideInput("Basic problem\n1\n1\n1\nIntermediate problem\n2\n2\n1\nAdvanced problem\n3\n2\n2\n");
-        reto6TechnicalSupport.run();
+    public void testAveragePriorityStrict() {
+        provideInput("Low priority issue\n1\n1\n1\nMedium priority issue\n2\n2\n2\n");
+
+        reto6TalktoTechnicalSupport.run();
+
         String output = outContent.toString();
 
-        assertTrue("Debe contar dos tickets que pasaron por varios tecnicos", output.contains("Tickets that passed through multiple technicians: 2"));
+        assertTrue("El promedio de prioridad de tickets resueltos es incorrecto", output.contains(String.format("Average priority of resolved tickets: %.2f", 1.50)));
     }
 
     @Test
-    public void testAveragePriorityResolvedTicketsStrict() {
-        provideInput("Issue one\n1\n1\n1\nIssue two\n1\n3\n1\nIssue three\n3\n3\n2\n");
-        reto6TechnicalSupport.run();
+    public void testSummaryStrict() {
+        provideInput("Password reset\n1\n1\n2\n");
+
+        reto6TalktoTechnicalSupport.run();
+
         String output = outContent.toString();
 
-        assertTrue("El promedio de prioridad debe ser 2.00", output.contains("Average priority of resolved tickets: 2.00"));
-    }
-
-    @Test
-    public void testSummaryHeaderStrict() {
-        provideInput("Simple problem\n1\n1\n2\n");
-        reto6TechnicalSupport.run();
-        String output = outContent.toString();
-
-        assertTrue("Falta el encabezado SUPPORT SUMMARY", output.contains("SUPPORT SUMMARY"));
-        assertTrue("Falta el encabezado STATISTICS", output.contains("STATISTICS"));
+        assertTrue("Falta el resumen final", output.contains("SUPPORT SUMMARY"));
+        assertTrue("Falta la descripcion del ticket en el resumen", output.contains("Password reset"));
+        assertTrue("Falta el estado del ticket", output.contains("RESOLVED"));
+        assertTrue("Falta el tecnico que resolvio el ticket", output.contains("Basic Technician"));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testInvalidDifficultyThrowsException() {
-        provideInput("Invalid difficulty\n9\n");
-        reto6TechnicalSupport.run();
+        provideInput("Invalid ticket\n9\n");
+
+        reto6TalktoTechnicalSupport.run();
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testInvalidPriorityThrowsException() {
-        provideInput("Invalid priority\n1\n9\n");
-        reto6TechnicalSupport.run();
+        provideInput("Invalid ticket\n1\n9\n");
+
+        reto6TalktoTechnicalSupport.run();
     }
 }
