@@ -1,4 +1,4 @@
-package edu.eci.dosw.reto2;
+import edu.eci.dosw.reto2;
 
 import static org.junit.Assert.*;
 import org.junit.After;
