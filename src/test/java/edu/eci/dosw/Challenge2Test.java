@@ -12,7 +12,7 @@ import java.io.PrintStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 
-public class Reto2FiveStarChefTest {
+public class Challenge2Test {
 
     private final InputStream originalIn = System.in;
     private final PrintStream originalOut = System.out;
