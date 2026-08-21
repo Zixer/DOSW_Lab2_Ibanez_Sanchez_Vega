@@ -1,4 +1,4 @@
-package edu.ecu.dosw.reto3;
+package edu.eci.dosw.reto3;
 
 /**
  * Represents a car
