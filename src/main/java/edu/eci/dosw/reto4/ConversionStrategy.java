@@ -1,4 +1,5 @@
 package edu.eci.dosw.reto4;
+
 public interface ConversionStrategy {
 
 /**

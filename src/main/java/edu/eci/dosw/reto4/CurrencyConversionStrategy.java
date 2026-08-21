@@ -25,8 +25,7 @@ public class CurrencyConversionStrategy implements ConversionStrategy {
      */
     @Override
     public double convert(double amount, Currency source, Currency destination) {
-        double rate =
-            rateProvider.getRate(source,destination);
+        double rate = rateProvider.getRate(source,destination);
         return amount * rate;
     }
 }

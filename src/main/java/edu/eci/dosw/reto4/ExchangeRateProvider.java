@@ -1,7 +1,5 @@
 package edu.eci.dosw.reto4;
 
-import java.util.Currency;
-
 /*Defines the contract for obtaining exchange rates
 between two currencies.*/
 public interface ExchangeRateProvider {

@@ -58,12 +58,6 @@ Displays the conversion information.
 */
   public void showInformation() {
 
-        System.out.printf(
-                "%.2f %s -> %.2f %s%n",
-                originalAmount,
-                sourceCurrency,
-                convertedAmount,
-                destinationCurrency
-        );
+        System.out.printf("%.2f %s -> %.2f %s%n",originalAmount,sourceCurrency,convertedAmount,destinationCurrency);
     }
 }

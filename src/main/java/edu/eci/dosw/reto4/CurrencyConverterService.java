@@ -27,8 +27,7 @@ Performs a currency conversion.
 
 public ConversionResult convert(double amount, Currency source, Currency destination) {
 
-        double convertedAmount =
-                conversionStrategy.convert(amount, source, destination);
+        double convertedAmount = conversionStrategy.convert(amount, source, destination);
         return new ConversionResult(amount, source, convertedAmount, destination);
     }
 }

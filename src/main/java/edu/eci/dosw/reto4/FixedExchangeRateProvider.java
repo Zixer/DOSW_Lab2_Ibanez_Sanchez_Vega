@@ -6,11 +6,10 @@ import java.util.Map;
  * Provides fixed exchange rates for the currencies
  * supported by the application.
  */
-public class FixedExchangeRateProvider
-        implements ExchangeRateProvider {
+public class FixedExchangeRateProvider implements ExchangeRateProvider {
 
-    private final Map<String, Double> rates =
-            new HashMap<>();
+    private final Map<String, Double> rates =new HashMap<>();
+    
     /**
      * Initializes the exchange rates for each
      * supported currency pair.
