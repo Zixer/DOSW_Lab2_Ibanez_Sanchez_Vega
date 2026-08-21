@@ -237,7 +237,7 @@ public final class reto6TalktoTechnicalSupport {
 
         System.out.println("\nTickets by difficulty:");
 
-        ticketsByLevel.forEach((level, amount) ->System.out.println(level+ ": "amount));
+        ticketsByLevel.forEach((level, amount) ->System.out.println(level + ": "+ amount));
 
         System.out.println("\nResolved tickets: "+ resolvedTickets);
 
