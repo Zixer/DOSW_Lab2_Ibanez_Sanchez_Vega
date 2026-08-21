@@ -268,7 +268,7 @@ The history is kept even when an action is undone. This makes it possible to kno
 
 
 
-![ECI Zoo UML Class Diagram](../diagrams/reto8-zoo-class-diagram.png)
+![ECI Zoo UML Class Diagram](diagrams/reto8-zoo-class-diagram.png)
 
 
 
