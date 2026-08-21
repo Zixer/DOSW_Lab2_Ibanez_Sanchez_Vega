@@ -1,7 +1,7 @@
 import edu.eci.dosw.reto1.reto1DonPepeStore; 
 import edu.eci.dosw.reto2.reto2FiveStarChef; 
 import edu.eci.dosw.reto3.reto3KingdomofVehicles; 
-import edu.eci.dosw.reto4.Reto4CurrencyExchangeScam; 
+import edu.eci.dosw.reto4.reto4CurrencyExchangeScam; 
 import edu.eci.dosw.reto5.reto5CustomizedCoffed; 
 import edu.eci.dosw.reto6.reto6TalktoTechnicalSupport;
 import edu.eci.dosw.reto7.reto7MagicRemoteControl;  
