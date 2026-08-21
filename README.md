@@ -6,7 +6,7 @@
 
 
 
-![Challenge 1 Execution](../evidences/lab2reto1.png)
+![Challenge 1 Execution](evidences/lab2reto1.png)
 
 
 
@@ -56,7 +56,7 @@ Java Streams are used to process the products and calculate totals using operati
 
 
 
-![Challenge 2 Execution](../evidences/lab2reto2.png)
+![Challenge 2 Execution](evidences/lab2reto2.png)
 
 
 
@@ -84,7 +84,7 @@ Java Streams are used to process the products and calculate totals using operati
 
 
 
-![Challenge 3 Execution](../evidences/lab2reto3.png)
+![Challenge 3 Execution](evidences/lab2reto3.png)
 
 
 
@@ -132,7 +132,7 @@ The discount rules used in our implementation are:
 
 
 
-![Challenge 4 Execution](../evidences/lab2reto4.png)
+![Challenge 4 Execution](evidences/lab2reto4.png)
 
 
 
@@ -172,7 +172,7 @@ Java Streams are used when converted amounts from multiple transactions need to 
 
 
 
-![Challenge 5 Execution](../evidences/lab2reto5.png)
+![Challenge 5 Execution](evidences/lab2reto5.png)
 
 
 
@@ -204,7 +204,7 @@ Java Streams are used to calculate the total price of the coffees created during
 
 
 
-![Challenge 6 Execution](../evidences/lab2reto6.png)
+![Challenge 6 Execution](evidences/lab2reto6.png)
 
 
 
@@ -236,7 +236,7 @@ Java Streams are used to obtain statistics such as tickets by level, resolved ti
 
 
 
-![Challenge 7 Execution](../evidences/lab2reto7.png)
+![Challenge 7 Execution](evidences/lab2reto7.png)
 
 
 
