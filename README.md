@@ -2,11 +2,11 @@
 
 
 
-\# Challenge 1 — Don Pepe's Store
+# Challenge 1 — Don Pepe's Store
 
 
 
-!\[Challenge 1 Execution](../evidences/lab2reto1.png)
+![Challenge 1 Execution](../evidences/lab2reto1.png)
 
 
 
@@ -30,7 +30,7 @@
 
 
 
-\## Polymorphism
+## Polymorphism
 
 
 
@@ -38,7 +38,7 @@ Polymorphism is used through the discount interface, different discount implemen
 
 
 
-\## Encapsulation and Immutability
+## Encapsulation and Immutability
 
 
 
@@ -52,15 +52,15 @@ Java Streams are used to process the products and calculate totals using operati
 
 
 
-\# Challenge 2 — The Five-Star Chef
+# Challenge 2 — The Five-Star Chef
 
 
 
-!\[Challenge 2 Execution](../evidences/lab2reto2.png)
+![Challenge 2 Execution](../evidences/lab2reto2.png)
 
 
 
-\## Design Pattern Documentation
+## Design Pattern Documentation
 
 
 
@@ -80,15 +80,15 @@ Java Streams are used to process the products and calculate totals using operati
 
 
 
-\# Challenge 3 — The Kingdom of Vehicles
+# Challenge 3 — The Kingdom of Vehicles
 
 
 
-!\[Challenge 3 Execution](../evidences/lab2reto3.png)
+![Challenge 3 Execution](../evidences/lab2reto3.png)
 
 
 
-\## Design Pattern Documentation
+## Design Pattern Documentation
 
 
 
@@ -110,7 +110,7 @@ The vehicle category also affects its price, maximum speed and equipment, Java S
 
 
 
-\## Discount Rules
+## Discount Rules
 
 
 
@@ -118,25 +118,25 @@ The discount rules used in our implementation are:
 
 
 
-\- 1 vehicle: no discount.
+- 1 vehicle: no discount.
 
-\- 2 vehicles: 5% discount.
+- 2 vehicles: 5% discount.
 
-\- 3 or more vehicles: 10% discount.
-
-
+- 3 or more vehicles: 10% discount.
 
 
 
-\# Challenge 4 — The Currency Exchange Scam
+
+
+# Challenge 4 — The Currency Exchange Scam
 
 
 
-!\[Challenge 4 Execution](../evidences/lab2reto4.png)
+![Challenge 4 Execution](../evidences/lab2reto4.png)
 
 
 
-\## Design Pattern Documentation
+## Design Pattern Documentation
 
 
 
@@ -154,7 +154,7 @@ The discount rules used in our implementation are:
 
 
 
-\## Exchange Rates
+## Exchange Rates
 
 
 
@@ -168,15 +168,15 @@ Java Streams are used when converted amounts from multiple transactions need to 
 
 
 
-\# Challenge 5 — Customized Coffee
+# Challenge 5 — Customized Coffee
 
 
 
-!\[Challenge 5 Execution](../evidences/lab2reto5.png)
+![Challenge 5 Execution](../evidences/lab2reto5.png)
 
 
 
-\## Design Pattern Documentation
+## Design Pattern Documentation
 
 
 
@@ -200,15 +200,15 @@ Java Streams are used to calculate the total price of the coffees created during
 
 
 
-\# Challenge 6 — Talk to Technical Support
+# Challenge 6 — Talk to Technical Support
 
 
 
-!\[Challenge 6 Execution](../evidences/lab2reto6.png)
+![Challenge 6 Execution](../evidences/lab2reto6.png)
 
 
 
-\## Design Pattern Documentation
+## Design Pattern Documentation
 
 
 
@@ -232,11 +232,11 @@ Java Streams are used to obtain statistics such as tickets by level, resolved ti
 
 
 
-\# Challenge 7 — The Magic Remote Control
+# Challenge 7 — The Magic Remote Control
 
 
 
-!\[Challenge 7 Execution](evidences/lab2reto7.png)
+![Challenge 7 Execution](../evidences/lab2reto7.png)
 
 
 
@@ -264,7 +264,7 @@ The history is kept even when an action is undone. This makes it possible to kno
 
 
 
-\# Challenge 8 — The UML Zoo
+# Challenge 8 — The UML Zoo
 
 
 
@@ -272,7 +272,7 @@ The history is kept even when an action is undone. This makes it possible to kno
 
 
 
-\## Main Classes and Responsibilities
+## Main Classes and Responsibilities
 
 
 
@@ -299,9 +299,7 @@ The history is kept even when an action is undone. This makes it possible to kno
 | Photo | Represents photographs uploaded by visitors |
 
 
-
-\## Relationships
-
+## Relationships
 
 
 | Source | Relationship | Target | Multiplicity | Explanation |
@@ -330,7 +328,7 @@ The history is kept even when an action is undone. This makes it possible to kno
 
 
 
-\## SOLID Application
+## SOLID Application
 
 
 
@@ -350,7 +348,7 @@ The history is kept even when an action is undone. This makes it possible to kno
 
 
 
-\## Design Patterns
+## Design Patterns
 
 
 
@@ -368,11 +366,11 @@ The history is kept even when an action is undone. This makes it possible to kno
 
 
 
-\## UML Class Diagram
+## UML Class Diagram
 
 
 
-!\[ECI Zoo UML Class Diagram](diagrams/reto8-zoo-class-diagram.png)
+![ECI Zoo UML Class Diagram](diagrams/reto8-zoo-class-diagram.png)
 
 
 
@@ -400,7 +398,7 @@ These values must be completed with the real results obtained after running:
 
 
 
-\# Team Members
+# Team Members
 
 
 
